@@ -1,0 +1,78 @@
+.login-scaffold {
+  h1 {
+    position: absolute;
+    top: 15vh;
+    left: 12vw;
+
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  p {
+    position: absolute;
+    left: 12vw;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .email-title {
+    top: 35vh;
+  }
+  .password-title {
+    top: 55vh;
+  }
+  .email-form {
+    position: absolute;
+    left: 12vw;
+    top: 43vh;
+  }
+  .password-form {
+    position: absolute;
+    left: 12vw;
+    top: 60vh;
+  }
+
+  input {
+    width: 20vw;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
+  input:focus {
+    outline: none;
+  }
+  .input-line {
+    height: 0.01px;
+    width: 30vw;
+    border: 1.2px solid black;
+  }
+
+  .submit-button {
+    position: absolute;
+    top: 75vh;
+    right: 25vw;
+    border: none;
+    background-color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .submit-button:hover {
+    cursor: pointer;
+  }
+}
+
+.background {
+  position: relative;
+  z-index: -1;
+
+  .one {
+    position: absolute;
+    top: 15vh;
+    left: 25vw;
+  }
+
+  .two {
+    position: absolute;
+    top: 70vh; // 왜 bottom이 안되는거지?;
+    right: 10vw;
+  }
+}

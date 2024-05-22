@@ -1,0 +1,115 @@
+import LabelWithHighlight from "../components/LabelWithHighlight";
+
+import "../styles/pages/ProfilePage.scss";
+
+const ProfilePage = () => {
+  return (
+    <div className="profile-page">
+      <div className="profile-page-scaffold">
+        <button className="back-button">
+          <svg
+            width="30"
+            height="20"
+            viewBox="0 0 30 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              y="8.73737"
+              width="12.3565"
+              height="3.63836"
+              rx="1.81918"
+              transform="rotate(-45 0 8.73737)"
+              fill="black"
+            />
+            <rect
+              x="8.7373"
+              y="19.3101"
+              width="12.3565"
+              height="3.63836"
+              rx="1.81918"
+              transform="rotate(-135 8.7373 19.3101)"
+              fill="black"
+            />
+            <rect y="8.00006" width="30" height="4" rx="2" fill="black" />
+          </svg>
+        </button>
+        <div className="profile-content-scaffold">
+          <div>
+            <svg
+              className="user-profile-circle"
+              width="149"
+              height="149"
+              viewBox="0 0 149 149"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="74.5"
+                cy="74.5"
+                r="74.5"
+                fill="#EFBC9B"
+                fill-opacity="0.75"
+              />
+              <text
+                x="74.5"
+                y="95"
+                font-size="50"
+                font-weight="400"
+                text-anchor="middle"
+                fill="black"
+              >
+                U
+              </text>
+            </svg>
+          </div>
+          <div className="profile-content">
+            <LabelWithHighlight
+              title="UserName"
+              fontSize={25}
+              fontWeight={300}
+              color="#EFBC9B40"
+              boxh={1}
+              boxw={10}
+            />
+            <p className="username">UserOne</p>
+            <LabelWithHighlight
+              title="Groups"
+              fontSize={25}
+              fontWeight={300}
+              color="#EFBC9B40"
+              boxh={1}
+              boxw={10}
+            />
+            <p className="group-num">5</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="background">
+        <svg
+          className="circle one"
+          width="78"
+          height="78"
+          viewBox="0 0 78 78"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="39" cy="39" r="39" fill="#F8F6E3" />
+        </svg>
+        <svg
+          className="circle two"
+          width="155"
+          height="155"
+          viewBox="0 0 155 155"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="77.5" cy="77.5" r="77.5" fill="#F8F6E3" />
+        </svg>
+      </div>
+    </div>
+  );
+};
+
+export default ProfilePage;

@@ -1,9 +1,11 @@
+import { useState } from "react";
 import LabelWithHighlight from "../components/LabelWithHighlight";
 import "../styles/pages/CreateGroupPage.scss";
 import { useNavigate } from "react-router-dom";
 
 const CreateGroupPage = () => {
   const nav = useNavigate();
+  const [groupName, setGroupName] = useState("Enter Group Name");
   return (
     <div className="create-group-page">
       <div className="create-group-page-scaffold">
@@ -73,7 +75,7 @@ const CreateGroupPage = () => {
               boxh={1}
               boxw={10}
             />
-            <p className="group-name">MyGroup</p>
+            <input type="text" placeholder={groupName} className="group-name" />
             <LabelWithHighlight
               title="Creator"
               fontSize={25}

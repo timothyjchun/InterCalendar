@@ -6,20 +6,21 @@ const LoginPage = () => {
       <div className="login-scaffold">
         <h1>Log In</h1>
 
-        <p className="email-title">Email Address</p>
         <form action="">
-          <div className="email-form">
-            <input type="text" name="" id="" />
-            <div className="email input-line" />
-          </div>
+          <div className="input-scaffold">
+            {/* <p className="username-title">Username</p> */}
+            <div className="username-form">
+              <input type="text" placeholder="Username" />
+              <div className="username input-line" />
+            </div>
 
-          <p className="password-title">Password</p>
-          <div className="password-form">
-            <input type="text" name="" id="" />
-            <div className="password input-line" />
+            {/* <p className="password-title">Password</p> */}
+            <div className="password-form">
+              <input type="password" placeholder="Password" />
+              <div className="password input-line" />
+            </div>
+            <button className="submit-button">Log In</button>
           </div>
-
-          <button className="submit-button">Log In</button>
         </form>
       </div>
 

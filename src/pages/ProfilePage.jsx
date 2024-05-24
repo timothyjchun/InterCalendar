@@ -1,12 +1,14 @@
 import LabelWithHighlight from "../components/LabelWithHighlight";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/pages/ProfilePage.scss";
 
 const ProfilePage = () => {
+  const nav = useNavigate();
   return (
     <div className="profile-page">
       <div className="profile-page-scaffold">
-        <button className="back-button">
+        <button className="back-button" onClick={() => nav(-1)}>
           <svg
             width="30"
             height="20"

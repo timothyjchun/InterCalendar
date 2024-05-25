@@ -3,25 +3,35 @@ import { Link } from "react-router-dom";
 import "../styles/components/Header.scss";
 import LabelWithHighlight from "./LabelWithHighlight";
 
+import { useSelector, useDispatch } from "react-redux";
+import { userLogout } from "../store/user/userSessionSlice";
+
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const loggedIn = useSelector((state) => state.userSession.loggedIn);
+  const dispatch = useDispatch();
   return (
     <>
       <div className="header-container">
         <LabelWithHighlight title="InterCalendar" boxh={1} boxw={17} />
         <div className="account-menu">
-          {isLoggedIn ? (
-            <div className="logged">
-              <Link to="/profile" id="account-button">
+          {loggedIn ? (
+            <div className="account-layout">
+              <Link to="/profile" className="account-link">
                 <p>MyPage</p>
               </Link>
+              <button
+                className="account-button"
+                onClick={() => dispatch(userLogout())}
+              >
+                <p>Logout</p>
+              </button>
             </div>
           ) : (
-            <div className="not-logged">
-              <Link to="/signup" id="account-button">
-                <p>Sign Up</p>
+            <div className="account-layout">
+              <Link to="/signup" className="account-link">
+                <p>SignUp</p>
               </Link>
-              <Link to="/login" id="account-button">
+              <Link to="/login" className="account-link">
                 <p>Login</p>
               </Link>
             </div>

@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LabelWithHighlight from "../components/LabelWithHighlight";
 import "../styles/pages/CreateGroupPage.scss";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const CreateGroupPage = () => {
   const nav = useNavigate();
+  const userName = useSelector((state) => state.userInfo.userName);
+  const userNameFirst = useSelector((state) => state.userInfo.userNameFirst);
   const [groupName, setGroupName] = useState("Enter Group Name");
+  // useEffect(() => {
+  //   console.log(groupName);
+  // }, [groupName]);
+
   return (
     <div className="create-group-page">
       <div className="create-group-page-scaffold">
@@ -62,7 +69,7 @@ const CreateGroupPage = () => {
                 textAnchor="middle"
                 fill="black"
               >
-                U
+                {userNameFirst}
               </text>
             </svg>
           </div>
@@ -75,7 +82,12 @@ const CreateGroupPage = () => {
               boxh={1}
               boxw={10}
             />
-            <input type="text" placeholder={groupName} className="group-name" />
+            <input
+              type="text"
+              placeholder={groupName}
+              className="group-name"
+              onChange={(e) => setGroupName(e.target.value)}
+            />
             <LabelWithHighlight
               title="Creator"
               fontSize={25}
@@ -84,7 +96,7 @@ const CreateGroupPage = () => {
               boxh={1}
               boxw={10}
             />
-            <p className="username">UserOne</p>
+            <p className="username">{userName}</p>
           </div>
         </div>
         <button className="create-group-button">

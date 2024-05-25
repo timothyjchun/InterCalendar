@@ -1,9 +1,12 @@
 import LabelWithHighlight from "../components/LabelWithHighlight";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import "../styles/pages/ProfilePage.scss";
 
 const ProfilePage = () => {
+  const userName = useSelector((state) => state.userInfo.userName);
+  const userNameFirst = useSelector((state) => state.userInfo.userNameFirst);
+  const groupNum = useSelector((state) => state.userInfo.groupNum);
   const nav = useNavigate();
   return (
     <div className="profile-page">
@@ -61,7 +64,7 @@ const ProfilePage = () => {
                 text-anchor="middle"
                 fill="black"
               >
-                U
+                {userNameFirst}
               </text>
             </svg>
           </div>
@@ -74,7 +77,7 @@ const ProfilePage = () => {
               boxh={1}
               boxw={10}
             />
-            <p className="username">UserOne</p>
+            <p className="username">{userName}</p>
             <LabelWithHighlight
               title="Groups"
               fontSize={25}
@@ -83,7 +86,7 @@ const ProfilePage = () => {
               boxh={1}
               boxw={10}
             />
-            <p className="group-num">5</p>
+            <p className="group-num">{groupNum}</p>
           </div>
         </div>
       </div>

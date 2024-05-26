@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import LabelWithHighlight from "../components/LabelWithHighlight";
 import "../styles/pages/CreateGroupPage.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const CreateGroupPage = () => {
   const nav = useNavigate();
   const userName = useSelector((state) => state.userInfo.userName);
-  const userNameFirst = useSelector((state) => state.userInfo.userNameFirst);
   const [groupName, setGroupName] = useState("Enter Group Name");
   // useEffect(() => {
   //   console.log(groupName);
@@ -69,39 +68,93 @@ const CreateGroupPage = () => {
                 textAnchor="middle"
                 fill="black"
               >
-                {userNameFirst}
+                {groupName[0]}
               </text>
             </svg>
           </div>
           <div className="group-content">
-            <LabelWithHighlight
-              title="GroupName"
-              fontSize={25}
-              fontWeight={300}
-              color="#EFBC9B40"
-              boxh={1}
-              boxw={10}
-            />
-            <input
-              type="text"
-              placeholder={groupName}
-              className="group-name"
-              onChange={(e) => setGroupName(e.target.value)}
-            />
-            <LabelWithHighlight
-              title="Creator"
-              fontSize={25}
-              fontWeight={300}
-              color="#EFBC9B40"
-              boxh={1}
-              boxw={10}
-            />
-            <p className="username">{userName}</p>
+            <div className="group-content-left">
+              <LabelWithHighlight
+                title="GroupName"
+                fontSize={25}
+                fontWeight={300}
+                color="#EFBC9B40"
+                boxh={1}
+                boxw={10}
+              />
+              <input
+                type="text"
+                placeholder={groupName}
+                className="group-name"
+                onChange={(e) => setGroupName(e.target.value)}
+              />
+              <LabelWithHighlight
+                title="Creator"
+                fontSize={25}
+                fontWeight={300}
+                color="#EFBC9B40"
+                boxh={1}
+                boxw={10}
+              />
+              <p className="username">{userName}</p>
+            </div>
+            <div className="group-content-right">
+              <LabelWithHighlight
+                title="Span"
+                fontSize={25}
+                fontWeight={300}
+                color="#EFBC9B40"
+                boxh={1}
+                boxw={10}
+              />
+              <div className="date-select">
+                <input type="date" />
+                <p> ~ </p>
+                <input type="date" />
+              </div>
+
+              <LabelWithHighlight
+                title="Time"
+                fontSize={25}
+                fontWeight={300}
+                color="#EFBC9B40"
+                boxh={1}
+                boxw={10}
+              />
+              <div className="time-select">
+                <input
+                  type="number"
+                  placeholder="3"
+                  min="1"
+                  max="10"
+                  id="number-input"
+                />
+                <p>Hours</p>
+              </div>
+              <LabelWithHighlight
+                title="Member Num"
+                fontSize={25}
+                fontWeight={300}
+                color="#EFBC9B40"
+                boxh={1}
+                boxw={12}
+              />
+              <input
+                type="number"
+                placeholder="5"
+                min="2"
+                max="20"
+                id="number-input"
+              />
+            </div>
           </div>
         </div>
-        <button className="create-group-button">
+        {/* <button className="create-group-button">
           <p>{"Create →"}</p>
-        </button>
+        </button> */}
+        <Link className="create-group-button" to="/waiting-room">
+          <p>{"Create →"}</p>
+        </Link>
       </div>
 
       <div className="background">

@@ -54,14 +54,14 @@ const ProfilePage = () => {
                 cy="74.5"
                 r="74.5"
                 fill="#EFBC9B"
-                fill-opacity="0.75"
+                fillOpacity="0.75"
               />
               <text
                 x="74.5"
                 y="95"
-                font-size="50"
-                font-weight="400"
-                text-anchor="middle"
+                fontSize="50"
+                fontWeight="400"
+                textAnchor="middle"
                 fill="black"
               >
                 {userNameFirst}
